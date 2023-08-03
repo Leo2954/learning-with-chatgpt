@@ -19,6 +19,16 @@ function draw() {
     // draw circles
     ellipse(xPos1, yPos1, 100, 100);
     ellipse(xPos2, yPos2, 100, 100);
+
+    //Calculate centers of both circles
+    let distance = dist(xPos1, yPos1, xPos2, yPos2);
+    if(distance <= 100)
+    {
+        fill(255, 0, 0);
+        ellipse(xPos1, yPos1, 100, 100);
+        ellipse(xPos2, yPos2, 100, 100);
+        text('Collision!', 10, 30);
+    }
 }
 
 function mouseClicked() {
