@@ -1,28 +1,29 @@
+let xPos = 250; // Center of the canvas
+let yPos = 250; // Center of the canvas
+let xSpeed = 1;
+let ySpeed = 4.5;
+let ellipseSize = 30;
+
+
 function setup() {
     createCanvas(500, 500);
     background(0);
-    nostroke();
-
-    let xPos = 0;
-    let yPos = 0;
-    let xSpeed = 1;
-    let ySpeed = 4.5;
-
+    noStroke();
+}
 
 function draw() {
-    background(0, 0, 0, 5);
+  background(0, 0, 0, 5);
 
-    fill(255, 0, 255);
-    ellipse(xPos, yPos, 30, 30);
+  fill(255, 0, 255);
+  ellipse(xPos, yPos, ellipseSize, ellipseSize);
 
-    xPos += xSpeed;
-    yPos += ySpeed;
+  xPos += xSpeed;
+  yPos += ySpeed;
 
-    if (xPos < 15 || xPos > 485) {
-        xSpeed *= -1;
-    }
-    if (yPos < 15 || yPos > 485) {
-        ySpeed *= -1;
-    }
-}
+  if (xPos < ellipseSize/2 || xPos > width - ellipseSize/2) {
+    xSpeed *= -1;
+  }
+  if (yPos < ellipseSize/2 || yPos > height - ellipseSize/2) {
+    ySpeed *= -1;
+  }
 }
